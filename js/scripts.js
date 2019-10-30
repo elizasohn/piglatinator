@@ -4,21 +4,24 @@ function piglatinator (string) {
   var strArray = string.split('');
 
 
-
-
-  //Searches the array for consecutive consonants and adds em to an array. Breaks when it reaches a vowel.
-  for (i=0; i<strArray.length; i++){
-    if (consonants.includes(strArray[i])) {
-      strArray.push(strArray[i]);
-    }
-    else if (vowels.includes(strArray[i])) {
-      for (j=0; j<i; j++){
-        strArray.shift();
+  if (vowels.includes(strArray[0]) && (strArray[0] !== "y")) {
+    strArray.push("way");
+}
+  else if (consonants.includes(strArray[0])) {
+    for (i=0; i<strArray.length; i++){
+      if (consonants.includes(strArray[i])) {
+        strArray.push(strArray[i]);
       }
-      strArray.push("ay");
-      break;
+      else if (vowels.includes(strArray[i])) {
+        for (j=0; j<i; j++){
+          strArray.shift();
+        }
+        strArray.push("ay");
+        break;
+      }
     }
   }
+
 
   // for (j=0; j<i; j++){
   //   strArray.shift();
@@ -58,14 +61,8 @@ $(document).ready(function(){
 
 
 // THIS WORKS
-// if (vowels.includes(strArray[0]) && (strArray[0] !== "y")) {
-//   strArray.push("way");
-// } else if ((strArray[0] === "q") && (strArray[1] === "u")) {
-//   strArray.splice((strArray.length), 0, strArray[0]);
-//   strArray.splice((strArray.length), 0, strArray[1]);
-//   strArray.shift();
-//   strArray.shift();
-//   strArray.push("ay");
+
+
 
 // } else if (vowels.includes(strArray[1])){
 //     strArray.splice((strArray.length), 0, strArray[0]);
