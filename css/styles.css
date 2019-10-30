@@ -1,5 +1,12 @@
 .resultBox {
   display: none;
+  margin-top: 100px;
+}
+.resultBox h3 {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  font-variant: small-caps;
 }
 .jumbotron {
     background-color: rgba(100,100,100,1);
@@ -10,4 +17,11 @@
     font-variant: small-caps;
     color: white;
     text-shadow: 2px 2px 2px black;
+}
+button {
+  margin-left: 40%;
+}
+#inputForm {
+  margin-left: 25%;
+  margin-right: 25%;
 }

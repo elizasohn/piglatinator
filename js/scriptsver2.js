@@ -22,20 +22,22 @@ function piglatinator (string) {
     quack = string.indexOf("qu");
     newWord = (string.slice(quack + 2)) + (string.slice(0, quack + 2)) + "ay";
     console.log(newWord);
-}
-
-
-
+  }
+  return newWord;
 }
 
 
 $(document).ready(function(){
   $("form#inputForm").submit(function(event){
     event.preventDefault();
+
     var userInput = $("#userString").val();
     var latinatedString = piglatinator(userInput);
 
-    $("#resultText").text(latinatedString);
-    $(".resultBox").show();
+    $("#resultText").append(latinatedString);
+    $(".resultBox").slideDown();
+
+    $("form#inputForm")[0].reset();
+
   });
 });
